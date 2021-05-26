@@ -1,5 +1,6 @@
 # GRID-website
-All projects and tasks related to GRID website
+## URL
+https://grid.rutgers.edu
 
 ## Accessibility Score History
 | Date | Score (%) |
