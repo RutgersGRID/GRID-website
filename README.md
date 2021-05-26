@@ -2,6 +2,11 @@
 ## URL
 https://grid.rutgers.edu
 
+## Versioning
+| Version | Deployment Date |
+| --- | --- |
+| 1.0.0 | 05-12-21 |
+
 ## Accessibility Score History
 | Date | Score (%) |
 | --- | --- |
