@@ -1,0 +1,398 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style type="text/css">:root {
+            
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .department-banner {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+        
+        .container {
+            --primary: #4a6fa5;
+            --secondary: #9b59b6;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+</style>
+<div class="department-banner">Rutgers UOES (University Online Education Services)</div>
+
+<header>
+<div class="logo">GRID VNE</div>
+
+<div class="tagline">Game Research Immersive Design Visual Novel Engine</div>
+
+<p>Empower your teaching through interactive storytelling — no coding required</p>
+</header>
+
+<div class="container">
+<section id="about">
+<h2>Reimagine Education Through Interactive Storytelling</h2>
+
+<p>GRID VNE is a powerful yet intuitive platform designed specifically for educators who want to create engaging, branching narrative experiences for their students without the technical barriers traditionally associated with game development.</p>
+
+<p>Visual novels are interactive fiction games that combine text-based storytelling with visual elements, allowing players to make choices that affect the narrative's direction. Originally developed for educational purposes in Japan, visual novels have evolved into a versatile medium for teaching complex concepts through immersive storytelling.</p>
+</section>
+
+<section id="benefits">
+<h2>Why Visual Novels for Education?</h2>
+
+<div class="feature-grid">
+<div class="feature-card">
+<div class="feature-icon">Low Resource Requirements</div>
+
+<p>Create compelling educational experiences without large teams, extensive technical skills, or significant time investments.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Active Learning</div>
+
+<p>Transform passive content consumption into active decision-making that promotes critical thinking and deeper engagement.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Consequence Exploration</div>
+
+<p>Allow students to safely explore the outcomes of different decisions in simulated scenarios relevant to your field.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Measurable Outcomes</div>
+
+<p>Collect detailed data on how students navigate through scenarios to assess understanding and decision-making processes.</p>
+</div>
+</div>
+</section>
+
+<section id="features">
+<h2>Key Features of GRID VNE</h2>
+
+<div class="feature-grid">
+<div class="feature-card">
+<div class="feature-icon">Spreadsheet-Based Creation</div>
+
+<p>Design your entire game using familiar Google Sheets. Simply fill in dialogue, narration, character appearances, backgrounds, and sound effects — GRID VNE handles all the technical integration.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Integrated Journal System</div>
+
+<p>Prompt students with reflection questions after key events. Journal entries are saved and can be revisited, creating a personalized record of each student's unique journey and learning process.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Strategic Rewind Points</div>
+
+<p>Create checkpoints that allow students to revisit critical decision points, encouraging exploration of different approaches and outcomes.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Comprehensive Analytics</div>
+
+<p>Gain valuable insights into how students navigate your scenarios with detailed data collection on choices, time spent, and paths taken.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Canvas LMS Integration</div>
+
+<p>Seamlessly embed your visual novels directly into Canvas, making them easily accessible to students within your existing course environment.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">Included Hosting</div>
+
+<p>Focus on teaching, not technical details. We provide reliable hosting for all your visual novel games at no additional cost.</p>
+</div>
+</div>
+</section>
+
+<section id="history">
+<h2>The Educational Roots of Visual Novels</h2>
+
+<div class="timeline">
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>1980s</h3>
+
+<p>Early text-based educational adventures emerge in Japan, focusing on teaching language and problem-solving skills.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>1990s</h3>
+
+<p>Visual novels evolve with the addition of graphics, creating more immersive learning environments for students.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>2000s</h3>
+
+<p>The genre expands globally, with educators recognizing their potential for teaching ethics, history, and complex decision-making.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<h3>2010s</h3>
+
+<p>Visual novels gain academic recognition as effective tools for scenario-based learning across disciplines.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-content">
+<h3>Today</h3>
+
+<p>GRID VNE makes this powerful educational tool accessible to all educators, regardless of technical background.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="applications">
+<h2>Educational Applications</h2>
+
+<div class="feature-grid">
+<div class="feature-card">
+<div class="feature-title">Ethics &amp; Decision Making</div>
+
+<p>Create scenarios where students navigate ethical dilemmas in your field, experiencing the consequences of their choices.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-title">Historical Perspectives</div>
+
+<p>Allow students to experience historical events from multiple viewpoints, deepening their understanding of complex situations.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-title">Professional Skills</div>
+
+<p>Simulate workplace scenarios where students can practice client interactions, emergency responses, or other field-specific skills.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-title">Concept Exploration</div>
+
+<p>Turn abstract concepts into narrative experiences that make complex ideas more accessible and engaging.</p>
+</div>
+</div>
+</section>
+
+<section id="horizon">
+<h2>On The Horizon</h2>
+
+<div class="feature-card" style="max-width: 600px; margin: 0 auto;">
+<div class="feature-icon">Coming Soon: VNE Dashboard</div>
+
+<p>We're excited to announce our upcoming VNE Dashboard, a comprehensive project management system that allows you to:</p>
+
+<ul style="text-align: left; margin-top: 1rem;">
+	<li>Manage multiple visual novel projects from a single interface</li>
+	<li>Organize and access all your assets (artwork, audio files, backgrounds) in one place</li>
+	<li>Track development progress across your projects</li>
+	<li>Access templates and starter resources to accelerate your creation process</li>
+</ul>
+
+<p style="margin-top: 1rem; font-style: italic;">Stay tuned for updates on this exciting addition to the GRID VNE ecosystem!</p>
+</div>
+</section>
+</div>
+
+<div class="cta">
+<h2>Ready to Transform Your Teaching?</h2>
+
+<p>Join the growing community of educators using GRID VNE to create meaningful, interactive learning experiences.</p>
+<a class="btn" href="#">Request Early Access</a></div>
+
+<footer>
+<p>© 2025 GRID VNE - Game Research Immersive Design Visual Novel Engine</p>
+</footer>

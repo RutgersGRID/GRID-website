@@ -1,0 +1,41 @@
+<!-- splat example - rabbit -->
+
+<div id="babylon-stl-viewer" style="width: 600px; height: 400px;">&nbsp;</div>
+<script src="https://cdn.babylonjs.com/babylon.js"></script><script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script><!-- Babylon loader for STL files --><script>
+    // Set up Babylon.js scene
+    const canvas = document.createElement("canvas");
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    document.getElementById("babylon-stl-viewer").appendChild(canvas);
+
+    const engine = new BABYLON.Engine(canvas, true);
+    const scene = new BABYLON.Scene(engine);
+
+    // Add a basic camera
+    const camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI / 2, 5, BABYLON.Vector3.Zero(), scene);
+    camera.attachControl(canvas, true);
+
+    // Add lighting
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
+
+    // Load a test STL file from a public URL
+    // const stlUrl = "https://apps.rugridservices.com/projects/splatts/Halo_Believe.splat";
+
+    const stlUrl = "https://upload.wikimedia.org/wikipedia/commons/4/43/Stanford_Bunny.stl";
+    BABYLON.SceneLoader.ImportMesh("", "", stlUrl, scene, function (meshes) {
+        meshes.forEach(mesh => {
+            mesh.position = BABYLON.Vector3.Zero();
+            mesh.scaling = new BABYLON.Vector3(0.01, 0.01, 0.01); // Adjust scale as needed
+        });
+    });
+
+    // Render loop
+    engine.runRenderLoop(() => {
+        scene.render();
+    });
+
+    // Adjust to window resize
+    window.addEventListener("resize", () => {
+        engine.resize();
+    });
+</script>
