@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOES Hub World - Virtual Education Reimagined</title>
+    <style>
+        /* Rutgers Brand Colors */
+        :root {
+            --rutgers-red: #CC0033;
+            --dark-red: #8D0D18;
+            --black: #000000;
+            --white: #FFFFFF;
+            --dark-gray: #222222;
+            --mid-gray: #666666;
+            --light-gray: #DBDBDB;
+            --teal: #006E6D;
+            --mid-teal: #52A7A9;
+            --pale-teal: #87C3BE;
+            --blue: #0073AC;
+            --mid-blue: #7DBFD6;
+            --pale-blue: #92D8E3;
+        }
+        
+        /* Typography - FF Meta Pro font family would be loaded via a font service */
+        body {
+            font-family: 'FF Meta Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+        
+        header {
+            background-color: var(--rutgers-red);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/400');
+            height: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+	
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--rutgers-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--dark-red);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            margin: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--rutgers-red);
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mid-gray);
+            font-weight: bold;
+        }
+        
+        .feature-content {
+            padding: 1.5rem;
+        }
+        
+        .feature-title {
+            color: var(--rutgers-red);
+            margin-top: 0;
+            font-weight: bold;
+        }
+        
+        .departments {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .department {
+            flex: 1 1 300px;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .department h3 {
+            color: var(--rutgers-red);
+            border-bottom: 2px solid var(--rutgers-red);
+            padding-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .tech-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tech-method-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s;
+        }
+        
+        .tech-method-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .placeholder-image {
+            height: 250px;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .replace-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        
+        .tech-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .tech-title {
+            color: var(--rutgers-red);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .tech-description {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            max-width: 80%;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .content h3 {
+            color: var(--rutgers-red);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .steps {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: var(--rutgers-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .trailer-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: #000;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        
+        .trailer-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--rutgers-red);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        /* Rutgers Logo and Navigation */
+        .rutgers-logo {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-grid, .departments, .tech-methods-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="/api/placeholder/60/60" alt="Rutgers Logo" class="rutgers-logo">
+                <h2>University Online Education Services</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#why">Why Virtual Worlds</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#departments">UOES Services</a></li>
+                    <li><a href="#how-we-built">How We Built It</a></li>
+                    <li><a href="#try-it">Try It</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>UOES Hub World</h1>
+            <p>Experience the future of education through an immersive, interactive virtual world built in Roblox. Designed to showcase the potential of virtual spaces in education using accessible tools and basic technical skills.</p>
+            <a href="https://www.roblox.com/games/112180932175163/Rutgers-UOES-Hub-Demo-World" class="cta-button">Try It Yourself</a>
+        </div>
+    </section>
+    
+    <main class="container">
+        <section id="trailer" class="section">
+            <h2 class="section-title">See the Hub World in Action</h2>
+            <div class="trailer-container">
+                <div class="trailer-placeholder">
+                    <p>Trailer Video Placeholder</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="concept" class="section">
+            <h2 class="section-title">Our Concept</h2>
+            <p>The UOES Hub World began with a simple question: "How can we showcase UOES services in a way that's engaging and demonstrates the power of virtual environments?" We set out to create a space that would:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="overview1.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Demonstrate Virtual World Potential</h3>
+                        <p>Show how an immersive, interactive, multiplayer virtual world can be created inside of Roblox using just core functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="academicmedia1.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Showcase UOES Services</h3>
+                        <p>Help players learn about University Online Education Services through engaging mechanics like dialogue, quizzes, and exploration.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="tools1.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Lower the Technical Barrier</h3>
+                        <p>Demonstrate that creating educational virtual worlds doesn't require advanced technical skills or specialized knowledge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="why" class="section">
+            <h2 class="section-title">Why Virtual Worlds for Education?</h2>
+            <p>Virtual worlds transform education by creating immersive experiences that traditional learning environments simply cannot match:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Immersion</h3>
+                        <p>Makes learning memorable and engaging by placing students directly within the content.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Interactivity</h3>
+                        <p>Allows students to learn by doing rather than passively observing.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Social Presence</h3>
+                        <p>Connects learners across physical boundaries, enabling collaborative learning.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Spatial Learning</h3>
+                        <p>Helps complex concepts become tangible through spatial representation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="features" class="section">
+            <h2 class="section-title">Hub World Features</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="multiplayer.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Multiplayer Interactions</h3>
+                        <p>Connect through voice and text chat with other players in a shared educational space.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="npc.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">NPC Dialogue System</h3>
+                        <p>Engage with diverse NPCs through branching dialogue trees to learn about services, hear testimonials, and gain insights.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="badge.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Interactive Assessment</h3>
+                        <p>Test your knowledge through quizzes about each department, collect coins, and earn permanent Roblox badges.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span><img src="devices1.png" /></span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Cross-Platform Access</h3>
+                        <p>Experience the Hub World on desktop, mobile, and VR devices with appropriate controls for each platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="departments" class="section">
+            <h2 class="section-title">UOES Services Showcased</h2>
+            
+            <div class="departments">
+                <div class="department">
+                    <h3>Instructional Design Services</h3>
+                    <p>Expert guidance on designing effective online courses and learning experiences. Our instructional designers help transform educational content into engaging digital learning journeys.</p>
+                </div>
+                
+                <div class="department">
+                    <h3>Academic Media Services</h3>
+                    <p>Professional media production for creating engaging educational content. From videos to interactive multimedia, our team produces high-quality materials that captivate and inform.</p>
+                </div>
+                
+                <div class="department">
+                    <h3>Emergent Technologies Services</h3>
+                    <p>Support for implementing VR, AI, game-based learning, and other innovative technologies. We help educators leverage cutting-edge tools to revolutionize the learning experience.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="how-we-built" class="section">
+            <h2 class="section-title">How We Built It</h2>
+            <p>The UOES Hub World demonstrates that creating educational virtual spaces has a lower technical barrier than you might think. Here's how we built it:</p>
+            
+            <div class="tech-methods-grid">
+                <!-- Roblox Studio -->
+                <div class="tech-method-card">
+                    <div class="placeholder-image">
+                        <div class="tech-icon">🧩</div>
+                        <h3 class="tech-title">Roblox Studio</h3>
+                        <p class="tech-description">The primary development environment used to create the UOES Hub World</p>
+                        
+                    </div>
+                    <div class="content">
+                        <p>We used Roblox Studio's pre-made assets, visual scripting options, and built-in multiplayer functionality to create the foundation of our world. The platform offers an accessible entry point for educators to create interactive 3D environments without requiring advanced technical skills.</p><img src="studio.png" />
+                    </div>
+                </div>
+                
+                <!-- AI-Generated Assets -->
+                <div class="tech-method-card">
+                    <div class="placeholder-image">
+
+
+                        <div class="tech-icon">🤖</div>
+                        <h3 class="tech-title">AI-Generated Assets</h3>
+                        <p class="tech-description">Creating 3D models using AI text-to-3D generation tools</p>
+                       
+
+                    </div>
+                    <div class="content">
+                        <p>Many 3D objects were created using AI text-to-3D generation tools with simple prompting techniques and minimal post-processing. This approach eliminates the need for 3D modeling expertise, making it possible for anyone to create custom assets for their virtual worlds.</p><img src="img23d1.png" />
+                    </div>
+                </div>
+                
+                <!-- Reality Capture -->
+                <div class="tech-method-card">
+                    <div class="placeholder-image">
+                        <div class="tech-icon">📸</div>
+                        <h3 class="tech-title">Reality Capture</h3>
+                        <p class="tech-description">Converting real objects into 3D models through photogrammetry</p>
+                        
+                    </div>
+                    <div class="content">
+                        <p>Some objects were created through photogrammetry – taking multiple photos of real objects and converting them into 3D models using Polycam, an accessible mobile app for 3D scanning. This technique allows educators to bring real-world objects from their teaching environments into the virtual space with minimal technical knowledge. You can see examples of our 3D scans on our <a href="https://poly.cam/@gridlab" target="_blank">GRID Lab Polycam profile</a>.</p>
+<p></p><img src="splat.png" /></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="try-it" class="section">
+            <h2 class="section-title">Try It Yourself</h2>
+            <p>Ready to explore the UOES Hub World? Access is free and available on multiple platforms:</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Create a Roblox Account</h3>
+                        <p>If you don't already have one, sign up at <a href="#">Roblox.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Access the Hub World</h3>
+                        <p>Visit the UOES Hub World <a href="https://www.roblox.com/games/112180932175163/Rutgers-UOES-Hub-Demo-World">experience page</a> and click "Play"</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Explore and Learn</h3>
+                        <p>Interact with NPCs, complete quizzes, collect coins, and discover all that UOES has to offer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://www.roblox.com/games/112180932175163/Rutgers-UOES-Hub-Demo-World" class="cta-button">Launch UOES Hub World</a>
+            </div>
+        </section>
+        
+        <section id="connect" class="section">
+            <h2 class="section-title">Connect with UOES</h2>
+            <p>Inspired to create your own educational space? UOES is here to help! Connect with us to explore how our services can support and enhance your online learning programs.</p>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="cta-button">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <h3>University Online Education Services</h3>
+            <p>Where Learning Comes to Life</p>
+            
+            <div class="contact-info">
+                <p>Email: info@uoes.edu</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
