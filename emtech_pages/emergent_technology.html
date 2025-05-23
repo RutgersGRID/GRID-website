@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Web Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+            padding: 60px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .text-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .text-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-weight: 300;
+        }
+
+        .text-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .image-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-content img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Alternating sections */
+        .section-1 {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .section-2 {
+            background: #ffffff;
+        }
+
+        .section-2 .section-content {
+            flex-direction: row-reverse;
+        }
+
+        .section-3 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .section-3 .text-content h2 {
+            color: white;
+        }
+
+        .section-3 .text-content p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-content {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+
+            .text-content {
+                padding: 20px;
+            }
+
+            .text-content h2 {
+                font-size: 2rem;
+            }
+
+            .text-content p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Emergent Technology</h1>
+            <p>The Office of University Online Education Services has specialized staff that explores, evaluates, and implements cutting-edge technological solutions to enhance online learning experiences. This forward-thinking group works closely with faculty and instructional designers to integrate innovative tools and platforms into fully online degree programs, ensuring that the university remains at the forefront of digital education and provides students with the most advanced and effective online learning environments.</p>
+            <a href="#content" class="cta-button">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section section-1" id="content">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="text-content">
+                    <h2>Generative AI</h2>
+                    <p>Our staff helps identify and evaluate cutting-edge AI tools tailored to educational needs, develops custom AI applications to address specific challenges in online learning, and provides strategic advice on integrating AI into course design and delivery. Through workshops, consultations, and hands-on support, we empower administrators and instructors to harness the potential of AI, improving efficiency in program management and creating more personalized, engaging learning experiences for students in online programs.</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1661458178984-c614e6f2c5fd?q=80&w=3390&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Innovation and Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section section-2">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="text-content">
+                    <h2>Extended Reality (XR)</h2>
+                    <p>We can provide comprehensive support for integrating Extended Reality (XR) technologies into online courses, enhancing student engagement and learning outcomes. Our team offers guidance on selecting appropriate XR tools and platforms, assists in developing immersive learning experiences tailored to specific course objectives, and provides training on effectively implementing XR activities in online environments. Through hands-on workshops and personalized consultations, we empower instructors to create virtual labs, 3D simulations, and interactive scenarios that bring complex concepts to life, offering students unique, experiential learning opportunities in their online programs.</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Purpose and Craftsmanship">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section section-3">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="text-content">
+                    <h2>GRID Lab</h2>
+                    <p>The Gaming Research and Immersive Design (GRID) Lab is a cutting-edge space where online instructors can explore and experiment with a wide range of emergent technologies. This hands-on environment allows faculty to experience virtual reality, augmented reality, gaming platforms, and other innovative tools firsthand, fostering a deeper understanding of their potential applications in online education. By providing a dedicated space for exploration and creativity, the GRID Lab empowers instructors to envision new possibilities for their courses, ultimately leading to more engaging and immersive learning experiences for students in online programs.</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Future Solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
