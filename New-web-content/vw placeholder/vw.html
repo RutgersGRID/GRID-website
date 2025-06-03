@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UOES Virtual Worlds - Educational Platforms Reimagined</title>
+    <style>
+        /* Rutgers Brand Colors */
+        :root {
+            --rutgers-red: #CC0033;
+            --dark-red: #8D0D18;
+            --black: #000000;
+            --white: #FFFFFF;
+            --dark-gray: #222222;
+            --mid-gray: #666666;
+            --light-gray: #DBDBDB;
+            --teal: #006E6D;
+            --mid-teal: #52A7A9;
+            --pale-teal: #87C3BE;
+            --blue: #0073AC;
+            --mid-blue: #7DBFD6;
+            --pale-blue: #92D8E3;
+        }
+        
+        body {
+            font-family: 'FF Meta Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+        
+        header {
+            background-color: var(--rutgers-red);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/400');
+            height: 400px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--rutgers-red);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--dark-red);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .section {
+            margin: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--rutgers-red);
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mid-gray);
+            font-weight: bold;
+        }
+        
+        .feature-content {
+            padding: 1.5rem;
+        }
+        
+        .feature-title {
+            color: var(--rutgers-red);
+            margin-top: 0;
+            font-weight: bold;
+        }
+        
+        .departments {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .department {
+            flex: 1 1 300px;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .department h3 {
+            color: var(--rutgers-red);
+            border-bottom: 2px solid var(--rutgers-red);
+            padding-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .example-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s;
+        }
+        
+        .example-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-header {
+            background: linear-gradient(135deg, var(--teal), var(--mid-teal));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .example-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .example-platform {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        .example-content {
+            padding: 1.5rem;
+        }
+        
+        .example-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        
+        .example-features li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .example-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .example-features li::before {
+            content: "✓";
+            color: var(--teal);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .tech-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .tech-method-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s;
+        }
+        
+        .tech-method-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .placeholder-image {
+            height: 250px;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .replace-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+        
+        .tech-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .tech-title {
+            color: var(--rutgers-red);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .tech-description {
+            font-size: 0.9rem;
+            color: var(--mid-gray);
+            max-width: 80%;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .content h3 {
+            color: var(--rutgers-red);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .steps {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: var(--rutgers-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .trailer-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: #000;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        
+        .trailer-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--rutgers-red);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        .rutgers-logo {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-grid, .departments, .tech-methods-grid, .examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="/api/placeholder/60/60" alt="Rutgers Logo" class="rutgers-logo">
+                <h2>University Online Education Services</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#why">Why Virtual Worlds</a></li>
+                    <li><a href="#examples">Examples</a></li>
+                    <li><a href="#departments">UOES Services</a></li>
+                    <li><a href="#platforms">Platforms & Tools</a></li>
+                    <li><a href="#get-started">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Virtual Worlds for Education</h1>
+            <p>Discover how immersive, interactive virtual environments are transforming education across platforms. From therapeutic spaces to creative workshops, explore the limitless potential of virtual world platforms using accessible tools and innovative approaches.</p>
+            <a href="#examples" class="cta-button">Explore Examples</a>
+        </div>
+    </section>
+    
+    <main class="container">
+        <section id="trailer" class="section">
+            <h2 class="section-title">See Virtual Worlds in Action</h2>
+            <div class="trailer-container">
+                <div class="trailer-placeholder">
+                    <p>Virtual Worlds Demo Reel Placeholder</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="concept" class="section">
+            <h2 class="section-title">Our Vision</h2>
+            <p>Virtual worlds represent the next frontier in educational technology. We're exploring how these immersive platforms can create meaningful learning experiences across diverse fields and applications. Our approach focuses on:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span>Innovation Image</span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Platform Innovation</h3>
+                        <p>Exploring multiple virtual world platforms to understand their unique strengths and educational applications across different contexts and learning objectives.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span>Accessibility Image</span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Accessible Creation</h3>
+                        <p>Demonstrating that powerful educational virtual worlds can be created without advanced technical expertise, using modern tools and AI-assisted workflows.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <span>Application Image</span>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Diverse Applications</h3>
+                        <p>Showcasing virtual worlds across disciplines—from therapeutic environments to artistic collaboration spaces—proving their versatility in education.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="why" class="section">
+            <h2 class="section-title">Why Virtual Worlds Transform Education</h2>
+            <p>Virtual worlds create learning experiences that transcend the limitations of traditional educational environments:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Immersive Learning</h3>
+                        <p>Students learn by being present within the content, creating memorable experiences that increase retention and engagement.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Safe Practice Spaces</h3>
+                        <p>Virtual environments provide risk-free spaces for practicing skills, from therapeutic interventions to creative techniques.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Global Collaboration</h3>
+                        <p>Connect learners worldwide, breaking down geographic barriers and enabling rich collaborative experiences.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Personalized Environments</h3>
+                        <p>Create customized learning spaces that adapt to different learning styles, accessibility needs, and educational objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="examples" class="section">
+            <h2 class="section-title">Virtual World Examples</h2>
+            <p>Explore how different platforms serve unique educational purposes across various disciplines and applications:</p>
+            
+            <div class="examples-grid">
+                <!-- UOES Hub World -->
+                <div class="example-card">
+                    <div class="example-header">
+                        <h3>UOES Hub World</h3>
+                        <div class="example-platform">Platform: Roblox</div>
+                    </div>
+                    <div class="example-content">
+                        <p>An interactive showcase of university services demonstrating how virtual worlds can present institutional information through engaging gameplay mechanics.</p>
+                        <ul class="example-features">
+                            <li>Multiplayer voice and text chat</li>
+                            <li>NPC dialogue systems</li>
+                            <li>Interactive assessment through quizzes</li>
+                            <li>Cross-platform accessibility (VR, mobile, desktop)</li>
+                            <li>Achievement system with persistent badges</li>
+                        </ul>
+                        <a href="#" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Explore Hub World</a>
+                    </div>
+                </div>
+                
+                <!-- Therapist Office -->
+                <div class="example-card">
+                    <div class="example-header">
+                        <h3>Virtual Therapist Office</h3>
+                        <div class="example-platform">Platform: VRChat / Horizon Worlds</div>
+                    </div>
+                    <div class="example-content">
+                        <p>A calming, professional therapeutic environment designed for mental health training and virtual counseling sessions, emphasizing accessibility and comfort.</p>
+                        <ul class="example-features">
+                            <li>Customizable comfort settings</li>
+                            <li>Private session rooms</li>
+                            <li>Therapeutic tool demonstrations</li>
+                            <li>Accessibility features for diverse needs</li>
+                            <li>Professional training scenarios</li>
+                        </ul>
+                        <a href="#" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Coming Soon</a>
+                    </div>
+                </div>
+                
+                <!-- NJ Book Arts Symposium -->
+                <div class="example-card">
+                    <div class="example-header">
+                        <h3>NJ Book Arts Symposium</h3>
+                        <div class="example-platform">Platform: Mozilla Hubs / Spatial</div>
+                    </div>
+                    <div class="example-content">
+                        <p>A virtual gallery and workshop space for book artists to showcase work, conduct workshops, and collaborate on projects in an immersive creative environment.</p>
+                        <ul class="example-features">
+                            <li>3D art gallery exhibitions</li>
+                            <li>Interactive workshop spaces</li>
+                            <li>Collaborative creation tools</li>
+                            <li>Digital portfolio sharing</li>
+                            <li>Community networking areas</li>
+                        </ul>
+                        <a href="#" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="departments" class="section">
+            <h2 class="section-title">UOES Services for Virtual World Creation</h2>
+            
+            <div class="departments">
+                <div class="department">
+                    <h3>Instructional Design Services</h3>
+                    <p>Transform your educational content into immersive virtual experiences. Our instructional designers specialize in creating learning pathways that leverage the unique affordances of virtual world platforms.</p>
+                </div>
+                
+                <div class="department">
+                    <h3>Academic Media Services</h3>
+                    <p>Professional 3D asset creation, virtual environment design, and multimedia integration. From photogrammetry to AI-generated content, we help bring your virtual worlds to life.</p>
+                </div>
+                
+                <div class="department">
+                    <h3>Emergent Technologies Services</h3>
+                    <p>Expert guidance on platform selection, VR implementation, and cutting-edge virtual world technologies. We help you choose the right tools and approaches for your educational goals.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="platforms" class="section">
+            <h2 class="section-title">Virtual World Platforms & Creation Tools</h2>
+            <p>Creating educational virtual worlds is more accessible than ever. Here are some of the platforms and tools we work with:</p>
+            
+            <div class="tech-methods-grid">
+                <!-- Popular Platforms -->
+                <div class="tech-method-card">
+                    <div class="placeholder-image">
+                        <div class="tech-icon">🌐</div>
+                        <h3 class="tech-title">Popular Platforms</h3>
+                        <p class="tech-description">User-friendly platforms with built-in creation tools</p>
+                        <div class="replace-badge">Replace with platform logos</div>
+                    </div>
+                    <div class="content">
+                        <p><strong>Roblox, VRChat, Horizon Worlds, Spatial</strong> - These platforms offer intuitive creation tools, built-in multiplayer functionality, and large user bases. Perfect for educators looking to create engaging experiences without extensive technical knowledge.</p>
+                    </div>
+                </div>
+                
+                <!-- Professional Tools -->
+                <div class="tech-method-card">
+                    <div class="placeholder-image">
+                        <div class="tech-icon">🛠️</div>
+                        <h3 class="tech-title">Professional Tools</h3>
+                        <p class="tech-description">Advanced platforms for custom virtual world development</p>
+                        <div class="replace-badge">Replace with tool screenshots</div>
+                    </div>
+                    <div class="content">
+                        <p><strong>Unity, Unreal Engine, Mozilla Hubs</strong> - For more complex educational applications requiring custom functionality. These tools offer greater flexibility and can be tailored to specific pedagogical needs.</p>
+                    </div>
+                </div>
+                
+                <!-- AI-Assisted Creation -->
+                <div class="tech-method-card">
+                    <div class="placeholder-image">
+                        <div class="tech-icon">🤖</div>
+                        <h3 class="tech-title">AI-Assisted Creation</h3>
+                        <p class="tech-description">Modern tools that democratize 3D content creation</p>
+                        <div class="replace-badge">Replace with AI tool examples</div>
+                    </div>
+                    <div class="content">
+                        <p><strong>Text-to-3D generators, Photogrammetry apps, AI asset libraries</strong> - These tools eliminate the need for traditional 3D modeling skills, allowing educators to create custom virtual objects and environments using simple text prompts or smartphone photos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="get-started" class="section">
+            <h2 class="section-title">Ready to Create Your Virtual World?</h2>
+            <p>Building educational virtual worlds is more accessible than you might think. Here's how to begin:</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Define Your Educational Goals</h3>
+                        <p>Identify what you want to achieve with your virtual world. Consider your audience, learning objectives, and the unique advantages virtual environments can provide.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Choose Your Platform</h3>
+                        <p>Select a virtual world platform that matches your technical comfort level, budget, and educational requirements. We can help you evaluate options.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Start Creating</h3>
+                        <p>Begin with simple environments and gradually add complexity. Most platforms offer tutorials and community support to help you learn.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#connect" class="cta-button">Get Expert Guidance</a>
+            </div>
+        </section>
+        
+        <section id="connect" class="section">
+            <h2 class="section-title">Partner with UOES</h2>
+            <p>Ready to explore virtual worlds for your educational program? UOES provides comprehensive support for virtual world creation, from initial concept to full implementation.</p>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="cta-button">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <h3>University Online Education Services</h3>
+            <p>Where Learning Comes to Life</p>
+            
+            <div class="contact-info">
+                <p>Email: info@uoes.edu</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
