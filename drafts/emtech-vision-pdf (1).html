@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerging Technologies Strategic Vision Report - DRAFT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            position: relative;
+        }
+        
+        .draft-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 6rem;
+            font-weight: bold;
+            color: rgba(220, 38, 38, 0.1);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .draft-header {
+            background-color: #fef2f2;
+            border: 2px solid #dc2626;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .draft-header h3 {
+            color: #dc2626;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .draft-header p {
+            color: #7f1d1d;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            page-break-after: always;
+            min-height: 10in;
+            position: relative;
+        }
+        
+        .page:last-child {
+            page-break-after: avoid;
+        }
+        
+        h1 {
+            color: #2563eb;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #2563eb;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+        
+        h4 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .tagline {
+            color: #6b7280;
+            font-style: italic;
+            font-size: 1.125rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .divider {
+            width: 6rem;
+            height: 0.25rem;
+            background-color: #3b82f6;
+            margin: 2rem auto;
+        }
+        
+        .section-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .blue-box {
+            background-color: #eff6ff;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .green-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+        }
+        
+        .yellow-box {
+            background-color: #fefce8;
+            border-left: 4px solid #ca8a04;
+        }
+        
+        .purple-box {
+            background-color: #faf5ff;
+            border-left: 4px solid #9333ea;
+        }
+        
+        .red-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #dc2626;
+        }
+        
+        .teal-box {
+            background-color: #f0fdfa;
+            border-left: 4px solid #0d9488;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .grid-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media print {
+            .draft-watermark {
+                display: block !important;
+            }
+            
+            .page {
+                margin: 0;
+                padding: 0.75in;
+                page-break-after: always;
+            }
+            
+            .page:last-child {
+                page-break-after: avoid;
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="draft-watermark">DRAFT</div>
+
+<!-- Title Page -->
+<div class="page">
+    <div class="draft-header">
+        <h3>DRAFT FOR REVIEW</h3>
+        <p>This document is a draft for review and comment</p>
+        <p>Subject to revision • Not for final distribution</p>
+    </div>
+    
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80%; text-align: center;">
+        <h1>Emerging Technologies</h1>
+        <div class="subtitle">Strategic Vision Report</div>
+        <div class="divider"></div>
+        <p class="tagline">Current Focus & Opportunities</p>
+        <p class="date">FY 2026 (July 2025 - June 2026)</p>
+        <div style="margin-top: 3rem; padding: 1rem; background-color: #fef2f2; border-radius: 0.5rem;">
+            <p style="color: #dc2626; font-weight: bold; margin-bottom: 0;">DRAFT VERSION</p>
+            <p style="color: #7f1d1d; font-size: 0.875rem;">Please provide feedback and comments</p>
+        </div>
+    </div>
+</div>
+
+<!-- Technology Landscape Reality -->
+<div class="page">
+    <div class="draft-header">
+        <h3>DRAFT FOR REVIEW</h3>
+        <p>This document is a draft for review and comment</p>
+    </div>
+    
+    <h2>Why We're Focusing on 12 Months</h2>
+    
+    <div class="section-box red-box">
+        <h3>Usable Technology Available at Increasing Rate</h3>
+        <p>New capabilities emerge monthly, not yearly. MCP servers and remote MCP became available recently, changing our landscape significantly.</p>
+    </div>
+    
+    <div class="section-box yellow-box">
+        <h3>AI-Assisted Development</h3>
+        <p>Terraform with AI assistance is now building IT infrastructure. AI coaching enables more sophisticated faculty applications.</p>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>Adaptive Planning</h3>
+        <p>We focus on quarterly milestones with monthly reassessment to capitalize on emerging opportunities.</p>
+    </div>
+</div>
+
+<!-- Technology vs Integration -->
+<div class="page">
+    <h2>Technology vs. Integration</h2>
+    
+    <div class="grid-2">
+        <div>
+            <h3>Emerging Technologies</h3>
+            <div class="section-box blue-box">
+                <h4>MCP Servers</h4>
+                <p>Model Context Protocol for AI systems</p>
+            </div>
+            <div class="section-box purple-box">
+                <h4>AI-Assisted Infrastructure</h4>
+                <p>Terraform with AI guidance</p>
+            </div>
+            <div class="section-box green-box">
+                <h4>Reality Capture</h4>
+                <p>Gaussian splats, NVIDIA Omniverse</p>
+            </div>
+            <div class="section-box yellow-box">
+                <h4>On-Device AI</h4>
+                <p>Local processing, WebAssembly</p>
+            </div>
+        </div>
+        
+        <div>
+            <h3>Integration Through VIDA Hub</h3>
+            <div class="section-box blue-box">
+                <h4>Instructor Interface</h4>
+                <p>Faculty access MCP capabilities without complexity</p>
+            </div>
+            <div class="section-box purple-box">
+                <h4>Automated Deployment</h4>
+                <p>AI-guided infrastructure through simple interface</p>
+            </div>
+            <div class="section-box green-box">
+                <h4>3D Content Creation</h4>
+                <p>One-click reality capture tools for educators</p>
+            </div>
+            <div class="section-box yellow-box">
+                <h4>Privacy-First AI</h4>
+                <p>Local AI processing integrated seamlessly</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MCP Integration -->
+<div class="page">
+    <h2>Model Context Protocol (MCP)</h2>
+    
+    <div class="section-box blue-box">
+        <h3>What is MCP?</h3>
+        <p>A new protocol for AI systems to access and integrate context from various sources, enabling more sophisticated AI assistants.</p>
+    </div>
+    
+    <div class="section-box blue-box">
+        <h3>Integration Through VIDA Hub</h3>
+        <ul>
+            <li>MCP servers accessible through the instructor interface</li>
+            <li>Faculty use MCP capabilities without technical complexity</li>
+            <li>Seamless integration with other VIDA Hub tools</li>
+            <li>Context-aware AI assistance for educational tasks</li>
+        </ul>
+    </div>
+    
+    <div class="section-box blue-box">
+        <h3>Implementation Timeline</h3>
+        <ul>
+            <li>Q1: Evaluate and integrate MCP servers into VIDA Hub</li>
+            <li>Q2: Pilot remote MCP access through instructor interface</li>
+            <li>Q3: Deploy MCP-based AI assistants via VIDA Hub</li>
+            <li>Q4: Scale MCP integration across all Hub features</li>
+        </ul>
+    </div>
+</div>
+
+<!-- AI-Assisted Infrastructure -->
+<div class="page">
+    <h2>Infrastructure as Code + AI</h2>
+    
+    <div class="section-box green-box">
+        <h3>Terraform with AI Assistance</h3>
+        <ul>
+            <li>AI-guided infrastructure design and deployment</li>
+            <li>Automated optimization and cost management</li>
+            <li>Intelligent error detection and resolution</li>
+            <li>Self-documenting infrastructure changes</li>
+        </ul>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>VIDA Project Benefits</h3>
+        <ul>
+            <li>Rapid deployment of new environments</li>
+            <li>Consistent, repeatable infrastructure</li>
+            <li>AI-assisted monitoring and maintenance</li>
+            <li>Scalable architecture for growing needs</li>
+        </ul>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>Faculty Self-Service</h3>
+        <p>AI-coached infrastructure provisioning allows faculty to deploy their own development environments without deep technical expertise.</p>
+    </div>
+</div>
+
+<!-- AI Development Coaching -->
+<div class="page">
+    <h2>AI Coaching for Application Development</h2>
+    
+    <div class="section-box purple-box">
+        <h3>What's New</h3>
+        <ul>
+            <li>AI coding assistants that understand educational contexts</li>
+            <li>Guided development workflows for faculty</li>
+            <li>Intelligent debugging and optimization</li>
+            <li>Automated testing and deployment assistance</li>
+        </ul>
+    </div>
+    
+    <div class="section-box purple-box">
+        <h3>Faculty Empowerment</h3>
+        <ul>
+            <li>Non-programmers can create sophisticated applications</li>
+            <li>AI explains code and suggests improvements</li>
+            <li>Automated documentation and maintenance</li>
+            <li>Integration with existing educational tools</li>
+        </ul>
+    </div>
+    
+    <div class="section-box purple-box">
+        <h3>Implementation Timeline</h3>
+        <p>Q1: Deploy AI assistants, Q2: Faculty coaching program, Q3: Advanced workflows, Q4: Student developer support</p>
+    </div>
+</div>
+
+<!-- Enhanced XR -->
+<div class="page">
+    <h2>Next-Generation XR Capabilities</h2>
+    
+    <div class="section-box yellow-box">
+        <h3>Gaussian Splats Evolution</h3>
+        <ul>
+            <li>Faster, more efficient 3D scene capture</li>
+            <li>AI-assisted 2D-to-3D conversion</li>
+            <li>Automated content creation pipelines</li>
+            <li>Faculty-accessible reality capture tools</li>
+        </ul>
+    </div>
+    
+    <div class="section-box yellow-box">
+        <h3>NVIDIA Omniverse Integration</h3>
+        <ul>
+            <li>Professional-grade virtual environments</li>
+            <li>Multi-user collaborative spaces</li>
+            <li>Physics-accurate simulations</li>
+            <li>Integration with existing 3D workflows</li>
+        </ul>
+    </div>
+    
+    <div class="section-box yellow-box">
+        <h3>WebXR Advances</h3>
+        <ul>
+            <li>Cross-platform compatibility improvements</li>
+            <li>Enhanced accessibility features</li>
+            <li>Seamless AR/VR transitions</li>
+            <li>Better integration with web platforms</li>
+        </ul>
+    </div>
+</div>
+
+<!-- On-Device Computing -->
+<div class="page">
+    <h2>Privacy-Preserving Local AI</h2>
+    
+    <div class="section-box red-box">
+        <h3>On-Device LLMs</h3>
+        <ul>
+            <li>Browser-based AI that keeps data local</li>
+            <li>Offline-capable educational AI assistants</li>
+            <li>Student privacy protection by design</li>
+            <li>Reduced dependence on cloud services</li>
+        </ul>
+    </div>
+    
+    <div class="section-box red-box">
+        <h3>WebAssembly (WASM) Applications</h3>
+        <ul>
+            <li>High-performance computing in browsers</li>
+            <li>Complex simulations and visualizations</li>
+            <li>Cross-platform compatibility</li>
+            <li>Near-native performance for educational tools</li>
+        </ul>
+    </div>
+    
+    <div class="section-box red-box">
+        <h3>Enhanced WebRTC</h3>
+        <ul>
+            <li>AI-agent-to-human communication</li>
+            <li>Persistent virtual meeting spaces</li>
+            <li>Collaborative AI workspaces</li>
+            <li>Real-time collaborative editing</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Quarterly Roadmap -->
+<div class="page">
+    <h2>Fiscal Year 2026 Quarters</h2>
+    
+    <div class="section-box blue-box">
+        <h3>Q1 FY26: Foundation (Jul-Sep 2025)</h3>
+        <ul>
+            <li>Establish faculty advisory committee</li>
+            <li>Begin University AI Governance participation</li>
+            <li>MCP server evaluation and VIDA Hub integration</li>
+            <li>AI coding assistant deployment for faculty</li>
+        </ul>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>Q2 FY26: Scaling (Oct-Dec 2025)</h3>
+        <ul>
+            <li>Faculty advisory committee technology evaluation</li>
+            <li>AI governance alignment and policy development</li>
+            <li>Remote MCP pilot through VIDA Hub interface</li>
+            <li>Enhanced reality capture workflows</li>
+        </ul>
+    </div>
+    
+    <div class="section-box yellow-box">
+        <h3>Q3 FY26: Implementation (Jan-Mar 2026)</h3>
+        <ul>
+            <li>Committee-advised MCP-based AI assistants</li>
+            <li>Governance-compliant self-service tools</li>
+            <li>Advanced XR accessibility features</li>
+            <li>WebAssembly educational tools integration</li>
+        </ul>
+    </div>
+    
+    <div class="section-box purple-box">
+        <h3>Q4 FY26: Consolidation (Apr-Jun 2026)</h3>
+        <ul>
+            <li>Full faculty advisory committee integration</li>
+            <li>University AI governance compliance review</li>
+            <li>Automated infrastructure maintenance protocols</li>
+            <li>FY 2027 planning with committee input</li>
+        </ul>
+    </div>
+</div>
+
+<!-- VIDA Hub -->
+<div class="page">
+    <h2>VIDA Hub as Integration Platform</h2>
+    
+    <div class="section-box blue-box">
+        <h3>What is VIDA Hub?</h3>
+        <p>VIDA Hub serves as the instructor interface where we integrate emerging technologies into usable educational tools.</p>
+        <ul>
+            <li>Single interface for accessing multiple emerging technologies</li>
+            <li>Faculty-friendly integration of complex technical capabilities</li>
+            <li>Bridge between raw technology and educational applications</li>
+        </ul>
+    </div>
+    
+    <div class="section-box purple-box">
+        <h3>Technology Integration Through VIDA Hub</h3>
+        <ul>
+            <li><strong>MCP Servers</strong>: Available through VIDA Hub for context-aware AI assistance</li>
+            <li><strong>AI Coaching</strong>: Integrated development environment within the platform</li>
+            <li><strong>Reality Capture</strong>: Seamless 3D content creation tools for instructors</li>
+            <li><strong>XR Environments</strong>: One-click deployment of virtual spaces</li>
+        </ul>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>Faculty Experience</h3>
+        <ul>
+            <li>Access emerging technologies without technical complexity</li>
+            <li>Focus on educational goals rather than technical implementation</li>
+            <li>Consistent interface across different technology capabilities</li>
+            <li>AI-assisted guidance for using integrated tools</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Faculty Support & Governance -->
+<div class="page">
+    <h2>Collaborative Approach</h2>
+    
+    <div class="section-box teal-box">
+        <h3>Faculty Advisory Committee</h3>
+        <ul>
+            <li>Establish a faculty advisory committee across disciplines</li>
+            <li>Expert guidance on educational technology integration</li>
+            <li>Feedback on VIDA Hub development and features</li>
+            <li>Faculty-led evaluation of emerging technologies</li>
+        </ul>
+    </div>
+    
+    <div class="section-box teal-box">
+        <h3>University AI Governance Participation</h3>
+        <ul>
+            <li>Participate in university-wide AI governance initiatives</li>
+            <li>Align with institutional AI policies and standards</li>
+            <li>Contribute to responsible AI implementation guidelines</li>
+            <li>Coordinate with broader university AI initiatives</li>
+        </ul>
+    </div>
+    
+    <div class="section-box teal-box">
+        <h3>Enhanced Faculty Support</h3>
+        <ul>
+            <li>AI-assisted coding workshops with advisory input</li>
+            <li>Infrastructure-as-code training aligned with governance</li>
+            <li>Advanced application development coaching</li>
+            <li>Faculty-led AI development communities</li>
+        </ul>
+    </div>
+    
+    <div class="section-box teal-box">
+        <h3>Human-Centered Approach</h3>
+        <ul>
+            <li>Faculty-driven technology adoption with committee guidance</li>
+            <li>Governance-aligned supportive policies</li>
+            <li>Augmentation rather than replacement philosophy</li>
+            <li>Transparent AI implementation practices</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Success Metrics -->
+<div class="page">
+    <h2>How We Measure Success</h2>
+    
+    <div class="section-box blue-box">
+        <h3>Technical Metrics</h3>
+        <ul>
+            <li>MCP server uptime and response times</li>
+            <li>AI-assisted infrastructure deployment success rates</li>
+            <li>Faculty application development completion rates</li>
+            <li>XR platform accessibility compliance</li>
+        </ul>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>Educational Impact</h3>
+        <ul>
+            <li>Faculty adoption of AI-assisted development</li>
+            <li>Student engagement in AI-enhanced environments</li>
+            <li>Course completion rates in XR-enabled classes</li>
+            <li>Faculty satisfaction with AI coaching</li>
+        </ul>
+    </div>
+    
+    <div class="section-box yellow-box">
+        <h3>Innovation Metrics</h3>
+        <ul>
+            <li>Time from technology identification to pilot</li>
+            <li>Faculty-led AI tool implementations</li>
+            <li>Cross-departmental technology collaborations</li>
+            <li>Student-initiated technology projects</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Adaptive Planning Framework -->
+<div class="page">
+    <h2>Staying Responsive to Change</h2>
+    
+    <div class="section-box blue-box">
+        <h3>Monthly Technology Radar</h3>
+        <ul>
+            <li>Track emerging technologies and educational applications</li>
+            <li>Assess implementation feasibility within 30-90 days</li>
+            <li>Identify rapid prototyping opportunities</li>
+        </ul>
+    </div>
+    
+    <div class="section-box green-box">
+        <h3>Quarterly Pivot Points</h3>
+        <ul>
+            <li>Review and adjust priorities based on technology maturation</li>
+            <li>Reallocate resources to highest-impact opportunities</li>
+            <li>Update faculty support strategies</li>
+        </ul>
+    </div>
+    
+    <div class="section-box yellow-box">
+        <h3>Continuous Learning</h3>
+        <ul>
+            <li>Weekly technology briefings for EmTech team</li>
+            <li>Monthly faculty feedback sessions</li>
+            <li>Quarterly technology trend analysis</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
